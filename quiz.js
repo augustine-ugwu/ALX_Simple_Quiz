@@ -1,18 +1,17 @@
+// A BASIC QUIZ APPLICATION
+
 function checkAnswer() {
   const correctAnswer = "4";
-  const userAnswer = document.querySelector('input[name="quiz"]:checked');
+  const userAnswer = document.querySelector('input[name="quiz"]:checked').value;
 
-  if (userAnswer) {
-    if (userAnswer.value === correctAnswer) {
-      document.getElementById("feedback").textContent = "Correct! Well done.";
-    } else {
-      document.getElementById("feedback").textContent =
-        "That's incorrect. Try again!";
-    }
+  // Compare the user's answer with the correct answer
+  if (userAnswer === correctAnswer) {
+    document.getElementById("feedback").textContent = "Correct! Well done.";
   } else {
     document.getElementById("feedback").textContent =
-      "Please select an answer.";
+      "That's incorrect. Try again!";
   }
 }
 
-document.getElementById("submit-answer").addEventListener("click", checkAnswer); // Add event listener
+// Add an Event Listener to the Submit Button:
+document.getElementById("submit-answer").addEventListener("click", checkAnswer);
